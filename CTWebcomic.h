@@ -13,6 +13,13 @@
 @property (strong) NSString *title;
 @property (strong) NSNumber *num;
 @property (strong) NSString *img;
+@property (strong) NSString *month;
+@property (strong) NSString *day;
+@property (strong) NSString *year;
+@property (strong) NSString *link;
+@property (strong) NSString *news;
+@property (strong) NSString *transcript;
+@property (strong) NSString *alt;
 
 - (id) initWithDictionary:(NSDictionary *)aDictionary;
 

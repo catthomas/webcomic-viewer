@@ -34,10 +34,4 @@
     
     return self;
 } //end initWithDictionary
-
-//TODO: customize these to ignore the values i do not want
-- (void) setValue:(id)value forUndefinedKey:(NSString *)key
-{
-    //TODO: ignore certain keys and values
-}
 @end
