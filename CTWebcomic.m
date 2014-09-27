@@ -40,9 +40,4 @@
 {
     //TODO: ignore certain keys and values
 }
-
-- (id) valueForUndefinedKey:(NSString *)key
-{
-    //TODO: ignore certain keys and values OR add them in as properties
-}
 @end

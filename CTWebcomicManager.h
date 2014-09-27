@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CTWebcomic.h"
 
 @interface CTWebcomicManager : NSObject
+
 
 @end
