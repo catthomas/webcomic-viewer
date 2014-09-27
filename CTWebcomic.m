@@ -17,6 +17,8 @@
     if(self)
     {
         _title = @"Unknown";
+        _safe_title = @"Unknown";
+        _img = @"Unknown";
         _num = @0;
         _img = @"Unknown";
         _month = @"Unknown";
