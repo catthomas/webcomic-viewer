@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 catthomas. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CTWebcomicViewController.h"
 
-@interface ViewController ()
+@interface CTWebcomicViewController ()
 
 @end
 
-@implementation ViewController
+@implementation CTWebcomicViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
