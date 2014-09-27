@@ -11,6 +11,7 @@
 @interface CTWebcomic : NSObject
 
 @property (strong) NSString *title;
+@property (strong) NSString *safe_title;
 @property (strong) NSNumber *num;
 @property (strong) NSString *img;
 @property (strong) NSString *month;
