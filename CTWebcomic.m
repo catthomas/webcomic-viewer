@@ -2,7 +2,7 @@
 //  CTWebcomic.m
 //  Webcomic-Viewer
 //
-//  Created by meow on 9/27/14.
+//  Created by Cat Thomas on 9/27/14.
 //  Copyright (c) 2014 catthomas. All rights reserved.
 //
 
@@ -35,7 +35,7 @@
     return self;
 } //end initWithDictionary
 
-//TODO: customize these
+//TODO: customize these to ignore the values i do not want
 - (void) setValue:(id)value forUndefinedKey:(NSString *)key
 {
     if ([key isEqualToString:@"id"]){
