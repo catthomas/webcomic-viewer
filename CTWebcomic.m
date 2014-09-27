@@ -38,19 +38,11 @@
 //TODO: customize these to ignore the values i do not want
 - (void) setValue:(id)value forUndefinedKey:(NSString *)key
 {
-    if ([key isEqualToString:@"id"]){
-        [self setValue:value forKey:@"ID"];
-    } else {
-        [super setValue:value forUndefinedKey:key];
-    }
+    //TODO: ignore certain keys and values
 }
 
 - (id) valueForUndefinedKey:(NSString *)key
 {
-    if ( [key isEqualToString:@"id"]){
-        return [self valueForKey:@"ID"];
-    } else{
-        return [super valueForUndefinedKey:key];
-    }
+    //TODO: ignore certain keys and values OR add them in as properties
 }
 @end
