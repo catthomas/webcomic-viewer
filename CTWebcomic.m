@@ -16,9 +16,18 @@
     
     if(self)
     {
-        _title = @"Unkown";
+        _title = @"Unknown";
+        _safe_title = @"Unknown";
         _img = @"Unknown";
         _num = @0;
+        _img = @"Unknown";
+        _month = @"Unknown";
+        _day = @"Unknown";
+        _year = @"Unknown";
+        _link = @"Unknown";
+        _news = @"Unknown";
+        _transcript = @"Unknown";
+        _alt = @"Unknown";
     }
     
     return self;
