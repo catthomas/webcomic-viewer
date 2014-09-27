@@ -24,4 +24,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)toFirstComic:(id)sender {
+}
+
+- (IBAction)toLatestComic:(id)sender {
+}
+
+- (IBAction)toNextComic:(id)sender {
+}
+- (IBAction)toPreviousComic:(id)sender {
+}
 @end
