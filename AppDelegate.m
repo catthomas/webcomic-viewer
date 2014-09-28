@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "CTWebcomicCommunicator.h"
-#import "CTWebcomic.h"
 
 @interface AppDelegate ()
 

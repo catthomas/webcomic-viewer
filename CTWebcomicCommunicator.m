@@ -5,6 +5,10 @@
 //  Created by Cat Thomas on 9/27/14.
 //  Copyright (c) 2014 catthomas. All rights reserved.
 //
+// This class does the networking for Webcomic-Viewer. It implements
+// methods from the open source code AFNetworking and is a subclass
+// of AFHTTPSessionManager. It operates as a singleton. Currently,
+// it is set up to display comics from xkcd.com.
 
 #import "CTWebcomicCommunicator.h"
 

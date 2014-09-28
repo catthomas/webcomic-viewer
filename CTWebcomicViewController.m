@@ -5,6 +5,11 @@
 //  Created by Cat Thomas on 9/27/14.
 //  Copyright (c) 2014 catthomas. All rights reserved.
 //
+// This is the view controller for Webcomic-Viewer. It displays
+// the current comic using CTWebcomicCommunicator for networking
+// and implements the methods to go to the next comic as well
+// as the previous comic. It uses open source code from AFNetworking
+// to convert an image URL to an imageview.
 
 #import "CTWebcomicViewController.h"
 #import "AFNetworking/UIImageView+AFNetworking.h"
