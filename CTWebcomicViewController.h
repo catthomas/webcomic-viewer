@@ -14,13 +14,9 @@
 
 @property (strong) CTWebcomic *currentComic;
 @property (strong) NSNumber *numberOfComics;
-@property long currentComicNumber;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *comicImageView;
 
-
-- (IBAction)toFirstComic:(id)sender;
-- (IBAction)toLatestComic:(id)sender;
 - (IBAction)toNextComic:(id)sender;
 - (IBAction)toPreviousComic:(id)sender;
 - (void) setComicImageViewWithImageURL:(NSString*) imageURL;
