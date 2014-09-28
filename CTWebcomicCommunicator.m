@@ -36,7 +36,7 @@ static NSString *endTag = @"/info.0.json";
     }];
 } //end getWebcomicWithNumber
 
-- (void) getCurrentWebcomicWithSuccess: (void (^)(NSURLSessionDataTask *task, CTWebcomic* currentWebcomic))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
+- (void) getLatestWebcomicWithSuccess: (void (^)(NSURLSessionDataTask *task, CTWebcomic* latestWebcomic))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
     [self GET:endTag parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         CTWebcomic *currentComic = [[CTWebcomic alloc] init];

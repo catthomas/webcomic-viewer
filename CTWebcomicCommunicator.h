@@ -13,5 +13,5 @@
 + (instancetype) sharedInstance;
 
 - (void) getWebcomicWithNumber:(NSString*)num success: (void (^)(NSURLSessionDataTask *task, CTWebcomic* webcomic))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
-- (void) getCurrentWebcomicWithSuccess: (void (^)(NSURLSessionDataTask *task, CTWebcomic* currentWebcomic))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+- (void) getLatestWebcomicWithSuccess: (void (^)(NSURLSessionDataTask *task, CTWebcomic* latestWebcomic))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 @end

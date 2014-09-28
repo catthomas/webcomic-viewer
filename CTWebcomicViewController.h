@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "CTWebcomic.h"
+#import "CTWebcomicCommunicator.h"
 
 @interface CTWebcomicViewController : UIViewController
 
+@property (strong) CTWebcomic *currentComic;
+@property (strong) NSNumber *numberOfComics;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *comicImageView;
 
@@ -19,5 +22,5 @@
 - (IBAction)toLatestComic:(id)sender;
 - (IBAction)toNextComic:(id)sender;
 - (IBAction)toPreviousComic:(id)sender;
+- (void) setComicImageViewWithImageURL:(NSString*) imageURL;
 @end
-
