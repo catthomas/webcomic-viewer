@@ -5,6 +5,9 @@
 //  Created by Cat Thomas on 9/27/14.
 //  Copyright (c) 2014 catthomas. All rights reserved.
 //
+// This class is representative of a single Webcomic.
+// It's properties are modeled after the comic data
+// for webcomics found on xkcd.com.
 
 #import "CTWebcomic.h"
 
