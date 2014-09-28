@@ -16,18 +16,24 @@
 @implementation CTWebcomicViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    
+    _currentComic = [[CTWebcomic alloc] init];
     
     //Set current comic to latest
-    [[CTWebcomicCommunicator sharedInstance] getLatestWebcomicWithSuccess:^(NSURLSessionDataTask *task, CTWebcomic *currentWebcomic) {
-        _currentComic = currentWebcomic; //set current comic
-        _numberOfComics = _currentComic.num; //set total number of comics
+    [[CTWebcomicCommunicator sharedInstance] GET:@"/info.0.json" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        CTWebcomic *comic = [[CTWebcomic alloc] init];
+        [comic setValuesForKeysWithDictionary:responseObject];
+        _currentComic = comic;
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"There was an error: %@", error);
+        failure(task, error);
+    }];SLog(@"There was an error: %@", error);
     }];
     
+    NSLog(@"%@", self.currentComic.img);
     //Set comic image on view
     [self setComicImageViewWithImageURL:_currentComic.img];
+    
+    [super viewDidLoad];
 } //end viewDidLoad
 
 - (void)didReceiveMemoryWarning {
@@ -96,7 +102,6 @@
 
 - (void) setComicImageViewWithImageURL:(NSString*) imageURL
 {
-    NSLog(@"%@", imageURL);
     [self.comicImageView setImageWithURL:[NSURL URLWithString:imageURL]];
 }// end setComicImageViewWithImageURL
 @end

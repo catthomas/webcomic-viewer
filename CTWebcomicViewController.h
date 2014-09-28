@@ -14,6 +14,7 @@
 
 @property (strong) CTWebcomic *currentComic;
 @property (strong) NSNumber *numberOfComics;
+@property long currentComicNumber;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *comicImageView;
 
