@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -14,66 +14,79 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cq8-ZN-XR2">
-                                <rect key="frame" x="16" y="57" width="325" height="250"/>
+                                <rect key="frame" x="16" y="42" width="288" height="294"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="325" id="Mmt-2a-bae"/>
-                                    <constraint firstAttribute="height" constant="250" id="h33-7M-q9s"/>
+                                    <constraint firstAttribute="height" constant="294" id="p25-1P-yoi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comic Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q9-ht-nEh">
-                                <rect key="frame" x="-106" y="20" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOF-r5-XO5">
-                                <rect key="frame" x="61" y="315" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="xgD-eh-Mdm"/>
-                                </constraints>
-                                <state key="normal" title="&lt; Prev">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="toPreviousComic:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="G5w-if-8v2"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWI-yw-Ji9">
-                                <rect key="frame" x="241" y="320" width="46" height="30"/>
+                                <rect key="frame" x="161" y="344" width="57" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="IB6-mo-0Wg"/>
+                                    <constraint firstAttribute="width" constant="57" id="jTa-26-RPd"/>
                                 </constraints>
-                                <state key="normal" title="Next >">
+                                <state key="normal" title=" Next > ">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="toNextComic:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ESt-Oq-Gax"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comic Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q9-ht-nEh">
+                                <rect key="frame" x="-124" y="20" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="Dfl-Bc-FjR"/>
+                                    <constraint firstAttribute="height" constant="21" id="I9Q-dI-pMt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.025861085766423361" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOF-r5-XO5">
+                                <rect key="frame" x="98" y="344" width="55" height="30"/>
+                                <state key="normal" title=" &lt; Prev ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toPreviousComic:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="G5w-if-8v2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.62872579361141312" green="0.73003255831781289" blue="0.81927614795918369" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="gOF-r5-XO5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="61" id="4tS-Ga-bP4"/>
-                            <constraint firstItem="Cq8-ZN-XR2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="KSe-5a-1XC"/>
-                            <constraint firstItem="BWI-yw-Ji9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="241" id="bXA-bb-Fh8"/>
-                            <constraint firstItem="Cq8-ZN-XR2" firstAttribute="top" secondItem="1Q9-ht-nEh" secondAttribute="bottom" constant="16" id="cnK-Fz-m95"/>
-                            <constraint firstItem="1Q9-ht-nEh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="hrS-hb-xDg"/>
-                            <constraint firstItem="Cq8-ZN-XR2" firstAttribute="centerX" secondItem="1Q9-ht-nEh" secondAttribute="centerX" id="lhS-Aj-BaW"/>
-                            <constraint firstItem="BWI-yw-Ji9" firstAttribute="top" secondItem="Cq8-ZN-XR2" secondAttribute="bottom" constant="13" id="mUJ-qf-kgK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BWI-yw-Ji9" secondAttribute="trailing" constant="86" id="5bL-va-xi0"/>
+                            <constraint firstItem="gOF-r5-XO5" firstAttribute="top" secondItem="Cq8-ZN-XR2" secondAttribute="bottom" constant="8" symbolic="YES" id="9AB-0M-Jup"/>
+                            <constraint firstItem="Cq8-ZN-XR2" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Cxh-fa-xJF"/>
+                            <constraint firstItem="gOF-r5-XO5" firstAttribute="baseline" secondItem="BWI-yw-Ji9" secondAttribute="baseline" id="Oxy-Oz-nWQ"/>
+                            <constraint firstItem="1Q9-ht-nEh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="PuQ-pb-7NC"/>
+                            <constraint firstItem="gOF-r5-XO5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="82" id="a3z-fY-YCg"/>
+                            <constraint firstItem="1Q9-ht-nEh" firstAttribute="centerX" secondItem="Cq8-ZN-XR2" secondAttribute="centerX" id="frY-r1-H8b"/>
+                            <constraint firstItem="Cq8-ZN-XR2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="kLk-Lb-R2S"/>
+                            <constraint firstItem="BWI-yw-Ji9" firstAttribute="leading" secondItem="gOF-r5-XO5" secondAttribute="trailing" constant="8" symbolic="YES" id="tR1-Sc-RmN"/>
+                            <constraint firstItem="Cq8-ZN-XR2" firstAttribute="top" secondItem="1Q9-ht-nEh" secondAttribute="bottom" constant="1" id="yOC-gI-DdJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="comicImageView" destination="Cq8-ZN-XR2" id="9i7-Kg-XMw"/>
+                        <outlet property="nextButton" destination="BWI-yw-Ji9" id="6N0-vJ-0Xb"/>
+                        <outlet property="prevButton" destination="gOF-r5-XO5" id="hnj-gG-r7h"/>
                         <outlet property="titleLabel" destination="1Q9-ht-nEh" id="Yn7-ad-Rb9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144" y="142"/>
+            <point key="canvasLocation" x="100.26666666666667" y="152.88666666666666"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

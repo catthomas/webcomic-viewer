@@ -18,7 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-     //Set current comic to latest
+    //Set button colors
+    [_prevButton setBackgroundColor:[UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f]];
+    [_nextButton setBackgroundColor:[UIColor colorWithRed:51.0f/255.0f green:102.0f/255.0f blue:153.0f/255.0f alpha:1.0f]];
+    
+    //Set current comic to latest
     dispatch_async(dispatch_get_main_queue(), ^{
         [[CTWebcomicCommunicator sharedInstance] getLatestWebcomicWithSuccess:^(NSURLSessionDataTask *task, CTWebcomic *latestWebcomic) {
             NSLog(@"%@", latestWebcomic);
