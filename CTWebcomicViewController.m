@@ -24,9 +24,9 @@
             NSLog(@"%@", latestWebcomic);
             _currentComic = latestWebcomic;
             _numberOfComics = _currentComic.num;
-            
             //Set comic image on view
             [self setComicImageViewWithImageURL:_currentComic.img];
+            _titleLabel.text = _currentComic.title;
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"There was an error: %@", error);
         }];
@@ -41,19 +41,19 @@
 
 - (IBAction)toNextComic:(id)sender
 {
-    NSNumber *nextComicNumber = [NSNumber numberWithDouble:[self.currentComic.num doubleValue] + 1];
-    
     dispatch_async(dispatch_get_main_queue(), ^{
     //If next comic is within bounds, display
-    if ([nextComicNumber doubleValue] <= [self.numberOfComics doubleValue]) {
+    if ([self.currentComic.num doubleValue] <= [self.numberOfComics doubleValue]) {
+        NSNumber *nextComicNumber = [NSNumber numberWithDouble:[self.currentComic.num doubleValue] + 1];
         [[CTWebcomicCommunicator sharedInstance] getWebcomicWithNumber:[nextComicNumber stringValue] success:^(NSURLSessionDataTask *task, CTWebcomic *webcomic) {
             self.currentComic = webcomic;
+            
+            //Set comic image on view
+            [self setComicImageViewWithImageURL:self.currentComic.img];
+            self.titleLabel.text = _currentComic.title;
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"There was an error: %@", error);
         }];
-        
-        //Set comic image on view
-        [self setComicImageViewWithImageURL:self.currentComic.img];
     }
     });
     
@@ -61,25 +61,25 @@
 
 - (IBAction)toPreviousComic:(id)sender
 {
-    NSNumber *previousComicNumber = [NSNumber numberWithDouble:[self.currentComic.num doubleValue] - 1];
-    
     //If next comic is within bounds, display
     dispatch_async(dispatch_get_main_queue(), ^{
-    if ([previousComicNumber doubleValue] > 0) {
+    if ([self.currentComic.num doubleValue] > 1) {
+        NSNumber *previousComicNumber = [NSNumber numberWithDouble:[self.currentComic.num doubleValue] - 1];
         [[CTWebcomicCommunicator sharedInstance] getWebcomicWithNumber:[previousComicNumber stringValue] success:^(NSURLSessionDataTask *task, CTWebcomic *webcomic) {
             self.currentComic = webcomic;
+            
+            //Set comic image on view
+            [self setComicImageViewWithImageURL:self.currentComic.img];
+            self.titleLabel.text = _currentComic.title;
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"There was an error: %@", error);
         }];
-        
-        //Set comic image on view
-        [self setComicImageViewWithImageURL:self.currentComic.img];
     }
     });
 } //end toPreviousComic
 
 - (void) setComicImageViewWithImageURL:(NSString*) imageURL
 {
-    [self.comicImageView setImageWithURL:[NSURL URLWithString:imageURL]];
+        [self.comicImageView setImageWithURL:[NSURL URLWithString:imageURL]];
 }// end setComicImageViewWithImageURL
 @end
