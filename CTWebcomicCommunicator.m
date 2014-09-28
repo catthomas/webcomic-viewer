@@ -28,18 +28,17 @@ static NSString *endTag = @"/info.0.json";
 - (void) getWebcomicWithNumber:(NSString*)num success: (void (^)(NSURLSessionDataTask *task, CTWebcomic* webcomic))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
     [self GET:[num stringByAppendingString:endTag] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        CTWebcomic *comic = [[CTWebcomic alloc] init];
-        [comic setValuesForKeysWithDictionary:responseObject];
+        CTWebcomic *comic = [[CTWebcomic alloc] initWithDictionary:responseObject];
         success(task, comic);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         failure(task, error);
     }];
 } //end getWebcomicWithNumber
-- (void) getCurrentWebcomicWithSuccess: (void (^)(NSURLSessionDataTask *task, CTWebcomic* currentWebcomic))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
+
+- (void) getLatestWebcomicWithSuccess: (void (^)(NSURLSessionDataTask *task, CTWebcomic* latestWebcomic))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
     [self GET:endTag parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        CTWebcomic *currentComic = [[CTWebcomic alloc] init];
-        [currentComic setValuesForKeysWithDictionary:responseObject];
+        CTWebcomic *currentComic = [[CTWebcomic alloc] initWithDictionary:responseObject];
         success(task, currentComic);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         failure(task, error);

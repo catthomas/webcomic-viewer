@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Webcomic View Controller-->
@@ -13,13 +14,77 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cq8-ZN-XR2">
+                                <rect key="frame" x="16" y="42" width="288" height="387"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWI-yw-Ji9">
+                                <rect key="frame" x="172" y="437" width="57" height="30"/>
+                                <state key="normal" title=" Next > ">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toNextComic:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ESt-Oq-Gax"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comic Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q9-ht-nEh">
+                                <rect key="frame" x="-124" y="20" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="I0O-D7-hQD"/>
+                                    <constraint firstAttribute="height" constant="21" id="hgc-o3-XxM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.025861085766423361" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Images from http://xkcd.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7n1-tY-JQa">
+                                <rect key="frame" x="87" y="460" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOF-r5-XO5">
+                                <rect key="frame" x="87" y="437" width="55" height="30"/>
+                                <state key="normal" title=" &lt; Prev ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toPreviousComic:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="G5w-if-8v2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.62872579361141312" green="0.73003255831781289" blue="0.81927614795918369" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Cq8-ZN-XR2" firstAttribute="top" secondItem="1Q9-ht-nEh" secondAttribute="bottom" constant="1" id="5Ce-np-TuB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BWI-yw-Ji9" secondAttribute="trailing" constant="75" id="FxW-if-b6Y"/>
+                            <constraint firstItem="1Q9-ht-nEh" firstAttribute="centerX" secondItem="Cq8-ZN-XR2" secondAttribute="centerX" id="HS5-Gm-Heh"/>
+                            <constraint firstItem="1Q9-ht-nEh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="LHe-OY-hZa"/>
+                            <constraint firstItem="Cq8-ZN-XR2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="RiB-sl-syx"/>
+                            <constraint firstItem="Cq8-ZN-XR2" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="VQe-Fq-2Ij"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7n1-tY-JQa" secondAttribute="bottom" constant="87" id="bDB-Ko-7oZ"/>
+                            <constraint firstItem="Cq8-ZN-XR2" firstAttribute="centerX" secondItem="7n1-tY-JQa" secondAttribute="centerX" id="mDH-JO-pFD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="comicImageView" destination="Cq8-ZN-XR2" id="9i7-Kg-XMw"/>
+                        <outlet property="nextButton" destination="BWI-yw-Ji9" id="6N0-vJ-0Xb"/>
+                        <outlet property="prevButton" destination="gOF-r5-XO5" id="hnj-gG-r7h"/>
+                        <outlet property="titleLabel" destination="1Q9-ht-nEh" id="Yn7-ad-Rb9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="100" y="152"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
